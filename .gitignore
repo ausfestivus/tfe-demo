@@ -4,6 +4,19 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
+outfile
 
 # .tfvars files
 *.tfvars
+
+# License files
+*.lic
+
+# Mac files
+.DS_Store
+
+# We dont want our certs of any kind in a repo
+tls
+
+# The `tfe_cluster` module will output a `work` dir with some stuff in it we dont want in the repo
+work
