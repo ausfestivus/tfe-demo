@@ -73,7 +73,7 @@ As at 20191108 the module used only supports installation with terraform 0.11.
 ```shell
 cd /Users/abest/github/tfe-demo
 /usr/local/opt/terraform\@0.11/bin/terraform init
-/usr/local/opt/terraform\@0.11/bin/terraform plan -out outfile -var-file ./demo.tfvars
+/usr/local/opt/terraform\@0.11/bin/terraform plan -out outfile -var-file ./customerDemo.tfvars
 /usr/local/opt/terraform\@0.11/bin/terraform apply outfile
 ```
 
