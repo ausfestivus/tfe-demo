@@ -1,0 +1,29 @@
+#
+# variables for the bootstrap on azure
+# See https://github.com/hashicorp/private-terraform-enterprise/tree/master/examples/bootstrap-azure
+# for list of vars and their purpose
+#
+
+prefix                  = "<NAME>" # use something unique here
+location                = "australiaeast"
+address_space           = "10.0.0.0/16"
+subnet_address_space    = "10.0.1.0/24" 
+additional_tags         = {application="tfeDemo" environment="dev"}
+address_space_allowlist = "*" # default is *. Set this to override default.
+key_vault_tenant_id     = "X"
+key_vault_object_id     = "X"
+application_id          = "x"
+owner_name              = "<YOUR NAME HERE>"
+
+#
+# 8 required variables here to deploy a demo environment.
+# 
+
+dns_domain                   = "" # string Description: Azure hosted DNS domain
+domain_rg_name               = "" # The name of the resource group where the domain name resides, if not set the main resource group will be used.
+certificate_path             = "{PATH TO}/cert.pfx" # string Description: Path to a TLS wildcard certificate for the domain in PKCS12 format.
+certificate_pass             = "secretwordshere" # string Description: The Password for the PKCS12 Certificate.
+license_path                 = "./tfelicense.lic" # string Description: Path to the RLI lisence file for Terraform Enterprise.
+domain_resource_group_name   = ""
+primary_vm_size              = ""
+tls_pfx_certificate_key_size = "4096"
