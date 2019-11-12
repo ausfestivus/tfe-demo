@@ -8,5 +8,6 @@ output "tfe_cluster" {
     primary_public_ip            = "${module.tfe_cluster.primary_public_ip}"
     ssh_config_file              = "${module.tfe_cluster.ssh_config_file}"
     ssh_private_key              = "${module.tfe_cluster.ssh_private_key}"
+    ssh_cli                      = "ssh -v -F ${module.tfe_cluster.ssh_config_file} ${module.tfe_cluster.primary_public_ip} -i ${module.tfe_cluster.ssh_private_key}"
   }
 }

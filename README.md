@@ -1,7 +1,7 @@
 
 # tfe-demo
 
-A basic demo of the [TFE module](https://registry.terraform.io/modules/hashicorp/terraform-enterprise/azurerm/0.1.0/examples/basic)
+A basic demo of the [TFE module](https://registry.terraform.io/modules/hashicorp/terraform-enterprise/azurerm/0.1.0/examples/basic). The complete Terraform Enterprise documentation is available from [https://www.terraform.io/docs/enterprise/index.html](https://www.terraform.io/docs/enterprise/index.html).
 
 ## Introduction
 
@@ -68,7 +68,7 @@ Save the bash script, make it executable and run `source PATH/SCRIPTNAME`.
 
 ## Running TF locally for the build
 
-As at 20191108 the module used only support terraform 0.11.
+As at 20191108 the module used only supports installation with terraform 0.11.
 
 ```shell
 cd /Users/abest/github/tfe-demo
@@ -77,3 +77,29 @@ cd /Users/abest/github/tfe-demo
 /usr/local/opt/terraform\@0.11/bin/terraform apply outfile
 ```
 
+When the build completes you will be give some output that looks like this:
+
+```shell
+Apply complete! Resources: 49 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+tfe_cluster = {
+  application_endpoint = <URL>
+  application_health_check = <URL>
+  install_id = <RANDOM>
+  installer_dashboard_endpoint = <URL>
+  installer_dashboard_password = <WORDS>
+  primary_public_ip = <IPADDRESS
+  ssh_config_file = <PATH TO SSH CONFIG FILE>
+  ssh_private_key = <PATH TO PRIVATE KEY>
+}
+```
+
+Ensure you take a copy of these details. You will need them later.
+
+You may need to wait 10-15 minutes for the `installer_dashboard_endpoint` to become available.
+
+## Completing the app install
+
+Once you are able to access the `installer_dashboard_endpoint` you can use the instructions at [https://www.terraform.io/docs/enterprise/install/config.html](https://www.terraform.io/docs/enterprise/install/config.html) to complete the installation.
